@@ -1,14 +1,21 @@
 .bannerParentDiv {
   padding-top: 4em;
+  width: 100vw; /* Ensure full width */
 }
+
 .bannerParentDiv .bannerChildDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .bannerParentDiv .bannerChildDiv .menuBar {
   display: flex;
-  padding: 10px 16px 10px 16px;
+  padding: 10px 16px;
 }
 
 .bannerParentDiv .bannerChildDiv .menuBar span {
+  font-weight: normal; /* Optional: Adjust if needed */
 }
 
 .bannerParentDiv .bannerChildDiv .menuBar .categoryMenu span {
@@ -17,7 +24,12 @@
 }
 
 .bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-grow: 1;
 }
+
 .bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions span {
   padding: 10px;
 }
@@ -25,9 +37,15 @@
 .bannerChildDiv .banner {
   position: relative;
   width: 100vw;
+  max-height: 500px; /* Set a max height for the banner image */
+  overflow: hidden; /* Ensure no overflow */
 }
-.bannerChildDiv .banner img{
+
+.bannerChildDiv .banner img {
   width: 100vw;
+  height: auto;
+  max-height: 100%; /* Ensure image does not overflow */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
 }
 
 @media only screen and (max-width: 700px) {
